@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+// Import dependencies
 import './App.css';
+import logo from './images/Link_256x256.png'
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+
+
+// import bootstrap comps
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/Container'
+
+
+// import Components
+import MyNav from './components/MyNav';
+import DisplayCategory from './components/DisplayCategory';
+import Home from './components/Home';
+import Item from './components/Item';
+import Page404 from './components/Page404';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <MyNav  Link={Link} Container={Container} logo={logo}/>
+        <Container>
+          <Routes>
+            <Route path='/' element={<Home logo={logo}/>}/>
+            <Route path='/category/:category' element={ <DisplayCategory />} />
+            <Route path='/item/:item' element={<Item />} />
+            <Route path='*' element={<Page404 />} />
+          </Routes>
+        </Container>
+        {/* <Home />
+        <Searchbar />
+        <DisplayCategory />
+        <Item /> */}
+      </Router>
+
+      
     </div>
   );
 }
