@@ -7,7 +7,7 @@ function Page404() {
     <Container className='fill-page'>
         <h1>Page Not Found Error code 404</h1>
         <img src={confusedIMG} alt="Confused Link" />
-        <p>We are sorry we could find that item or page</p>
+        <p>We are sorry we couldn't find that item or page</p>
     </Container>
   )
 }

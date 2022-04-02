@@ -72,7 +72,7 @@ function Item() {
 
 
     return (
-        <Container className='my-5 fill-page d-flex justify-content-center'>
+        <Container className='my-5 fill-page d-flex justify-content-center align-items-center'>
             {renderItem()}
         </Container>
     )
