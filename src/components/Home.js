@@ -10,7 +10,7 @@ import Searchbar from './Searchbar'
 function Home({ logo }) {
   return (
     <>
-       <Container className='my-5 py-3 bg1 w-75'>
+       <Container className='my-5 py-3 bg1 col-md-8'>
          <h4>Welcome to</h4>
          <h1>Zelda Anthology</h1>
          <img src={logo} alt='Link Logo' />

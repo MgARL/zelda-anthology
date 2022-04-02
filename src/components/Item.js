@@ -38,7 +38,7 @@ function Item() {
     const renderItem = () => {
         if (data.name){
             return (
-                <div className='bg1 w-75'>
+                <div className='bg1 col-md-8'>
                     <h1>{data.name.toUpperCase()}</h1>
                     <Row className='d-flex justify-content-center'>
                         <Col xs={12} md={4}>
