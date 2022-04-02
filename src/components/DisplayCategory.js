@@ -13,7 +13,7 @@ function DisplayCategory() {
     let navigate = useNavigate()
     const [data, setData] = useState([])
     const [currentPage, setCurrentPage] = useState(1)
-    const [itemsPerPage, setItemsPerPage] = useState(12)
+    const [itemsPerPage] = useState(12)
 
 
     useEffect(() => {

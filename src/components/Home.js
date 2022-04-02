@@ -16,12 +16,12 @@ function Home({ logo }) {
          <img src={logo} alt='Link Logo' />
          <Row className='d-flex justify-content-center'>
            <Col xs={12} md={6}>
-             <p>Here you will find information about items, creatures, monsters and treasure about <span style={{fontWeight: 500,}}>The Legend of Zelda: Breath of the Wild</span></p>
+             <p>Here you will find information about items, creatures, monsters, and treasure about <span style={{fontWeight: 500,}}>The Legend of Zelda: Breath of the Wild</span></p>
            </Col>
          </Row>
          <Row className='d-flex justify-content-center'>
            <Col xs={12} md={6}>
-             <p>Lets begin the adventure! search for the name of an item, creature monster or treasure down below:</p>
+             <p>Lets begin the adventure! search for the name of an item, creature, monster, or treasure down below:</p>
            </Col>
          </Row>
          <Row className='d-flex justify-content-center'>
