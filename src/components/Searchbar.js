@@ -23,7 +23,7 @@ function Searchbar() {
                     value={searchInput}
                     onChange={(e)=> setSearchInput(e.target.value)}
                 />
-                <Button variant="outline-success" type='submit'>Search</Button>
+                <Button variant="success" type='submit'>Search</Button>
             </Form>
         </>
     )

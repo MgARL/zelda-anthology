@@ -41,7 +41,7 @@ function DisplayCategory() {
             return <Row xs={1} md={2} lg={3} xxl={4} className='g-3'>
                 {data.map((item, i) => {
                     return (
-                        <Col key={i}>
+                        <Col key={i} className='d-flex justify-content-center'>
                             <Card border='primary' style={{ width: '18rem' }}>
                                 <Card.Img variant="top" src={item.image} />
                                 <Card.Body>
@@ -66,7 +66,7 @@ function DisplayCategory() {
     }
 
     return (
-        <Container>
+        <Container className='fill-page'>
             <h2>{category.toUpperCase()}</h2>
             {renderData()}
         </Container>

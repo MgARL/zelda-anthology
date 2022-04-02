@@ -18,10 +18,10 @@ import Page404 from './components/Page404';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App fill-page">
       <Router>
         <MyNav  Link={Link} Container={Container} logo={logo}/>
-        <Container>
+        <Container className='pb-3'>
           <Routes>
             <Route path='/' element={<Home logo={logo}/>}/>
             <Route path='/category/:category' element={ <DisplayCategory Link={Link} />} />
@@ -29,13 +29,7 @@ function App() {
             <Route path='*' element={<Page404 />} />
           </Routes>
         </Container>
-        {/* <Home />
-        <Searchbar />
-        <DisplayCategory />
-        <Item /> */}
       </Router>
-
-      
     </div>
   );
 }

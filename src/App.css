@@ -1,7 +1,14 @@
 .App {
   text-align: center;
+  background-image: url('./images/background-min.png');
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: rgb(72,127,180);
 }
 
 .bg1{
   background-color: rgb(51,196,234, 0.75);
+}
+.fill-page{
+  min-height: 100vh;
 }

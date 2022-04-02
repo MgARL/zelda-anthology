@@ -38,9 +38,9 @@ function Item() {
     const renderItem = () => {
         if (data.name){
             return (
-                <>
+                <div className='bg1 w-75'>
                     <h1>{data.name.toUpperCase()}</h1>
-                    <Row className='d-flex justify-content-end'>
+                    <Row className='d-flex justify-content-center'>
                         <Col xs={12} md={4}>
                             <h4>ID No: {data.id}</h4>
                         </Col>
@@ -63,7 +63,7 @@ function Item() {
                             </ul>
                         </Col>
                     </Row>
-                </>
+                </div>
             )
         }else{
            return <img src={loadingIMG} alt="Loading gif" style={{height: '150px'}}/>
@@ -72,7 +72,7 @@ function Item() {
 
 
     return (
-        <Container className='my-5'>
+        <Container className='my-5 fill-page d-flex justify-content-center'>
             {renderItem()}
         </Container>
     )
