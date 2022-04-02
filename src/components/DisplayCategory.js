@@ -19,8 +19,9 @@ function DisplayCategory() {
                 if (response.ok) {
                     let parsedRes = await response.json()
                     if (parsedRes.data.food) {
-                        setData(parsedRes.data.food)
-                        setData(d => [...d, parsedRes.data.non_food])
+                        let creaturesArr = parsedRes.data.food.concat(parsedRes.data.non_food)
+                        
+                        setData(creaturesArr)
                     } else {
                         setData(parsedRes.data)
                     }
@@ -33,9 +34,10 @@ function DisplayCategory() {
         }
         fetchData()
     }, [category, navigate])
+    console.log(data)
 
     const renderData = () => {
-        if (data.length > 1) {
+        if (data.length > 3) {
             return <Row xs={1} md={2} lg={3} xxl={4} className='g-3'>
                 {data.map((item, i) => {
                     return (
