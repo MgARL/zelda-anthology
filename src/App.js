@@ -24,7 +24,7 @@ function App() {
         <Container>
           <Routes>
             <Route path='/' element={<Home logo={logo}/>}/>
-            <Route path='/category/:category' element={ <DisplayCategory />} />
+            <Route path='/category/:category' element={ <DisplayCategory Link={Link} />} />
             <Route path='/item/:item' element={<Item />} />
             <Route path='*' element={<Page404 />} />
           </Routes>

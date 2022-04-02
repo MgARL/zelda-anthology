@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import loadingIMG from '../images/loading_zelda.gif'
 
 function Item() {
     const { item } = useParams()
@@ -35,10 +36,10 @@ function Item() {
     }
 
     const renderItem = () => {
-        if (data){
+        if (data.name){
             return (
                 <>
-                    <h1>{data.name}</h1>
+                    <h1>{data.name.toUpperCase()}</h1>
                     <Row className='d-flex justify-content-end'>
                         <Col xs={12} md={4}>
                             <h4>ID No: {data.id}</h4>
@@ -64,6 +65,8 @@ function Item() {
                     </Row>
                 </>
             )
+        }else{
+           return <img src={loadingIMG} alt="Loading gif" style={{height: '150px'}}/>
         }
     }
 
