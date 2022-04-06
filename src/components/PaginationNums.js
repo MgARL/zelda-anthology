@@ -1,7 +1,5 @@
 import React, { useState } from 'react'
 import Pagination from 'react-bootstrap/Pagination'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
 
 function PaginationNums({ itemsPerPage, totalItems, paginate }) {
     const [active, setActive] = useState(1);
