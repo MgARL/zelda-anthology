@@ -46,6 +46,7 @@ function DisplayCategory() {
     
     const paginate = (number) =>{
         setCurrentPage(number)
+        window.scrollTo(0,0)
     }
 
     const renderData = () => {
