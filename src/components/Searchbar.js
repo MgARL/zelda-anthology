@@ -8,7 +8,7 @@ function Searchbar() {
     let navigate = useNavigate()
     return (
         <>
-            <Form className="d-flex" onSubmit={(e) => {
+            <Form className="d-flex me-4" onSubmit={(e) => {
                 e.preventDefault()
                 // Redirect to Item Page                
                 navigate(`/item/${searchInput}`)

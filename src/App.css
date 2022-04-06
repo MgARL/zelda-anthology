@@ -12,3 +12,7 @@
 .fill-page{
   min-height: 100vh;
 }
+
+.footer-fill{
+  min-height: calc(100vh - 299px);
+}

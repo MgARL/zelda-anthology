@@ -10,18 +10,19 @@ import Container from 'react-bootstrap/Container'
 
 
 // import Components
-import MyNav from './components/MyNav';
 import DisplayCategory from './components/DisplayCategory';
 import Home from './components/Home';
 import Item from './components/Item';
 import Page404 from './components/Page404';
+import Footer from './components/Footer';
+import NavigationBar from './components/NavigationBar';
 
 function App() {
   return (
     <div className="App fill-page">
       <Router>
-        <MyNav  Link={Link} Container={Container} logo={logo}/>
-        <Container className='pb-3'>
+        <NavigationBar  Link={Link} logo={logo}/>
+        <Container className='pb-3 footer-fill'>
           <Routes>
             <Route path='/' element={<Home logo={logo}/>}/>
             <Route path='/category/:category' element={ <DisplayCategory Link={Link} />} />
@@ -29,6 +30,7 @@ function App() {
             <Route path='*' element={<Page404 />} />
           </Routes>
         </Container>
+        <Footer logo={logo} Link={Link}/>
       </Router>
     </div>
   );
