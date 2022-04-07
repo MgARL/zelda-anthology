@@ -5,30 +5,14 @@ import Col from 'react-bootstrap/Col'
 import twitterIcon from '../images/icons8-twitter-100.png'
 import linkedinIcon from '../images/icons8-linkedin-48.png'
 import githubIcon from '../images/icons8-github-48.png'
-import triForce from '../images/triforce.png'
-import Navbar from 'react-bootstrap/Navbar'
 
 // my comps
-import MyNav from './MyNav'
-import Searchbar from './Searchbar'
-
+import NavigationBar from './NavigationBar'
 
 function Footer({ logo, Link }) {
     return (
         <Container fluid className='d-flex flex-column align-items-center  bg1'>
-            <Row style={{width: '100%'}} className='mb-3'>
-                <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
-                    <Navbar variant="light">
-                        <MyNav Link={Link} logo={logo} />
-                    </Navbar>
-                </Col>
-                <Col xs={12} md={4} className='d-flex align-items-center justify-content-center'>
-                    <img src={triForce} alt='The Triforce' height='50' className='pb-2 me-2' /><h3>Zelda Anthology</h3>
-                </Col>
-                <Col xs={12} md={4} className='d-flex align-items-center justify-content-end'>
-                    <Searchbar />
-                </Col>
-            </Row>
+            <NavigationBar Link={Link} logo={logo} />
             <Row>
                 <Col xs={12} className="d-flex justify-content-center mb-4">
                     <a href="https://twitter.com/mgarl22" target='_blank' rel="noreferrer" className="px-2">

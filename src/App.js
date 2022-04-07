@@ -23,7 +23,9 @@ function App() {
   return (
     <div className="App fill-page">
       <Router>
-        <NavigationBar Link={Link} logo={logo} />
+        <Container fluid className='bg1 pb-2 sticky-top'>
+          <NavigationBar Link={Link} logo={logo} />
+        </Container>
         <Container className='pb-3 footer-fill'>
           <ScrollToTop>
             <Routes>

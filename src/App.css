@@ -1,9 +1,23 @@
+@font-face {
+  font-family: "ZeldaOne";
+  src: url('./fonts/TheWildBreathOfZelda-15Lv.ttf');
+}
+
+@font-face {
+  font-family: "WindWaker";
+  src: url('./fonts/RocknRollOne-Regular.ttf');
+}
 .App {
   text-align: center;
   background-image: url('./images/background-min.png');
   background-size: cover;
   background-attachment: fixed;
   background-color: rgb(72,127,180);
+  font-family: 'WindWaker', sans-serif;
+}
+
+.zelda-font{
+  font-family: 'ZeldaOne', sans-serif;
 }
 
 .bg1{
