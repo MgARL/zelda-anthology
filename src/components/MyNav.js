@@ -11,7 +11,7 @@ function MyNav({ Link, logo }) {
   return (
     <>
       <Navbar variant='light' expand='sm' className='bg1 px-3'>
-        <Navbar.Brand as={Link} to="/"><img src={logo} width="40" height="40" className="d-inline-block align-top" alt="Link logo" /></Navbar.Brand>
+        <Navbar.Brand as={Link} to="/"><img src={logo} width="40" height="40" className="d-inline-block align-center" alt="Link logo" /><span className='ms-2'>Zelda Anthology</span></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id='navbar' >
           <Nav className="me-auto">
