@@ -72,7 +72,7 @@ function DisplayCategory() {
                         })}
                     </Row>
                     <Row className='d-flex justify-content-center'>
-                        <Col xs={12} md={6} lg={3} className='d-flex justify-content-center'>
+                        <Col xs={12} className='d-flex justify-content-center'>
                             <Pagination itemsPerPage={itemsPerPage} totalItems={data.length} paginate={paginate}/>
                         </Col>
                     </Row>

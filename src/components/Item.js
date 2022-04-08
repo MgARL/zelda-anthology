@@ -4,6 +4,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import loadingIMG from '../images/loading_zelda.gif'
+import { Link } from 'react-router-dom'
+import Button from 'react-bootstrap/Button'
 
 function Item() {
     const { item } = useParams()
@@ -30,13 +32,20 @@ function Item() {
 
     const renderLocationList = () => {
         if (locationArr) {
-            return locationArr.map((location, i) => <li key={i}>{location}</li>)
+            return (
+                <Col sm={6}>
+                    <p>Common locations:</p>
+                    <ul className='list-unstyled'>
+                        {locationArr.map((location, i) => <li key={i}>{location}</li>)}
+                    </ul>
+                </Col>
+            )
 
         }
     }
 
     const renderItem = () => {
-        if (data.name){
+        if (data.name) {
             return (
                 <div className='bg1 col-md-8'>
                     <h1>{data.name.toUpperCase()}</h1>
@@ -51,22 +60,34 @@ function Item() {
                             {data.description}
                         </Col>
                     </Row>
-                    <Row>
+                    <Row className='d-flex justify-content-center'>
                         <Col sm={6}>
                             <h5>Category:</h5>
                             <h6>{data.category}</h6>
                         </Col>
-                        <Col sm={6}>
-                            <p>Common locations:</p>
-                            <ul className='list-unstyled'>
-                                {renderLocationList()}
-                            </ul>
+                        {renderLocationList()}
+                    </Row>
+                    <Row className='d-flex justify-content-center m-2 '>
+                        <Col xs={4} lg={2} className='d-flex justify-content-center'>
+                            <Button as={Link} to={`/item/${item - 1}`} variant='success' className='d-flex align-items-center'>
+                                Previous Item
+                            </Button>
+                        </Col>
+                        <Col xs={4} lg={2} className='d-flex justify-content-center'>
+                            <Button as={Link} to="/" variant='success' className='d-flex align-items-center'>
+                                Home
+                            </Button>
+                        </Col>
+                        <Col xs={4} lg={2} className='d-flex justify-content-center'>
+                            <Button as={Link} to={`/item/${Number(item) + 1}`} variant='success' className='d-flex align-items-center'>
+                                Next Item
+                            </Button>
                         </Col>
                     </Row>
                 </div>
             )
-        }else{
-           return <img src={loadingIMG} alt="Loading gif" style={{height: '150px'}}/>
+        } else {
+            return <img src={loadingIMG} alt="Loading gif" style={{ height: '150px' }} />
         }
     }
 

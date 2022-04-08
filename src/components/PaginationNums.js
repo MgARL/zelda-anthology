@@ -15,7 +15,7 @@ function PaginationNums({ itemsPerPage, totalItems, paginate }) {
         );
     }
     return (
-        <Pagination className='mt-3'>
+        <Pagination className='mt-3 d-flex flex-wrap'>
                 {pageNumbers ? pageNumbers : null}
         </Pagination>
     )
