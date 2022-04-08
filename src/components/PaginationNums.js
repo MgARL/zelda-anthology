@@ -6,7 +6,7 @@ function PaginationNums({ itemsPerPage, totalItems, paginate }) {
     let pageNumbers = [];
     for (let i = 1; i <= Math.ceil(totalItems / itemsPerPage); i++) {
         pageNumbers.push(
-                <Pagination.Item active={i === active} onClick={() => {
+                <Pagination.Item key={i} active={i === active} onClick={() => {
                     paginate(i)
                     setActive(i)
                 }}>

@@ -20,6 +20,9 @@
   font-family: 'ZeldaOne', sans-serif;
 }
 
+.hover-link:hover{
+  color: rgb(255,214,0);
+}
 .bg1{
   background-color: rgb(51,196,234, 0.75);
 }

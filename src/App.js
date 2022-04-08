@@ -15,17 +15,17 @@ import Home from './components/Home';
 import Item from './components/Item';
 import Page404 from './components/Page404';
 import Footer from './components/Footer';
-import NavigationBar from './components/NavigationBar';
 import ScrollToTop from './components/ScrollToTop';
+
+import MyNav from './components/MyNav';
 
 function App() {
 
   return (
     <div className="App fill-page">
       <Router>
-        <Container fluid className='bg1 pb-2 sticky-top'>
-          <NavigationBar Link={Link} logo={logo} />
-        </Container>
+        
+         <MyNav Link={Link} logo={logo}/>
         <Container className='pb-3 footer-fill'>
           <ScrollToTop>
             <Routes>
