@@ -7,11 +7,13 @@ import loadingIMG from '../images/loading_zelda.gif'
 import { Link } from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
 
+// my comps
+import MoreInfo from './MoreInfo'
+
 function Item() {
     const { item } = useParams()
     const navigate = useNavigate()
     let [data, setData] = useState({})
-    let [locationArr, setLocationArr] = useState([])
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -19,7 +21,6 @@ function Item() {
                 if (response.ok) {
                     let parsedRes = await response.json()
                     setData(parsedRes.data)
-                    setLocationArr(parsedRes.data.common_locations)
                 } else {
                     navigate('/404')
                 }
@@ -29,20 +30,6 @@ function Item() {
         }
         fetchData()
     }, [item, navigate])
-
-    const renderLocationList = () => {
-        if (locationArr) {
-            return (
-                <Col sm={6}>
-                    <p>Common locations:</p>
-                    <ul className='list-unstyled'>
-                        {locationArr.map((location, i) => <li key={i}>{location}</li>)}
-                    </ul>
-                </Col>
-            )
-
-        }
-    }
 
     const renderItem = () => {
         if (data.name) {
@@ -60,16 +47,15 @@ function Item() {
                             {data.description}
                         </Col>
                     </Row>
-                    <Row className='d-flex justify-content-center'>
-                        <Col sm={6}>
-                            <h5>Category:</h5>
-                            <h6>{data.category}</h6>
+                    <Row className='mt-3'>
+                        <Col xs={12}>
+                            <h3>More Information:</h3>
                         </Col>
-                        {renderLocationList()}
                     </Row>
-                    <Row className='d-flex justify-content-center m-2 '>
+                    <MoreInfo data={data}/>
+                    <Row className='d-flex justify-content-center m-2'>
                         <Col xs={4} lg={2} className='d-flex justify-content-center'>
-                            <Button as={Link} to={`/item/${item - 1}`} variant='success' className='d-flex align-items-center'>
+                            <Button as={Link} to={`/item/${Number(data.id - 1)}`} variant='success' className='d-flex align-items-center'>
                                 Previous Item
                             </Button>
                         </Col>
@@ -79,7 +65,7 @@ function Item() {
                             </Button>
                         </Col>
                         <Col xs={4} lg={2} className='d-flex justify-content-center'>
-                            <Button as={Link} to={`/item/${Number(item) + 1}`} variant='success' className='d-flex align-items-center'>
+                            <Button as={Link} to={`/item/${Number(data.id) + 1}`} variant='success' className='d-flex align-items-center'>
                                 Next Item
                             </Button>
                         </Col>
