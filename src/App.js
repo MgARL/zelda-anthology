@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className="App fill-page">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         
          <MyNav Link={Link} logo={logo}/>
         <Container className='pb-3 footer-fill'>
